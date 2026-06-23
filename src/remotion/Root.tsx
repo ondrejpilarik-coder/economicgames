@@ -8,6 +8,8 @@ import {
   VIDEO_WIDTH,
   defaultIntroProps,
 } from "./constants";
+import { GreeceVideo } from "./greece/GreeceVideo";
+import { GREECE_DURATION_IN_FRAMES, GREECE_FPS } from "./greece/script";
 
 // Registered for Remotion Studio (`npm run studio`) and rendering
 // (`npm run render`). The Next.js <Player> preview reuses the same
@@ -23,6 +25,14 @@ export const RemotionRoot: React.FC = () => {
         width={VIDEO_WIDTH}
         height={VIDEO_HEIGHT}
         defaultProps={defaultIntroProps}
+      />
+      <Composition
+        id="GreeceWageStory"
+        component={GreeceVideo}
+        durationInFrames={GREECE_DURATION_IN_FRAMES}
+        fps={GREECE_FPS}
+        width={VIDEO_WIDTH}
+        height={VIDEO_HEIGHT}
       />
     </>
   );
